@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pasdaran-e-Insaniyat — Helping the Needy, One Step at a Time.">
+<title>Pasdaran-e-Insaniyat | Guardians of Humanity</title>
+<style>
+:root{
+  --navy:#071827;
+  --navy2:#0d2a3d;
+  --navy3:#143a52;
+  --gold:#d7ad58;
+  --gold2:#f0d08a;
+  --cream:#fbf8f1;
+  --white:#ffffff;
+  --ink:#16202a;
+  --muted:#66717d;
+  --line:#e8edf1;
+  --green:#15966d;
+  --shadow:0 22px 70px rgba(5,22,35,.14);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:#04111d;color:#c7d4dc;font-size:14px}
+.topbar .inner{
+  min-height:38px;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap
+}
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(7,24,39,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.07)
+}
+.navrow{display:flex;align-items:center;justify-content:space-between;min-height:78px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:850;letter-spacing:.2px}
+.logo{
+  width:48px;height:48px;border-radius:15px;
+  display:grid;place-items:center;
+  border:1px solid rgba(240,208,138,.8);
+  background:linear-gradient(145deg,#0f3147,#081b2a);
+  color:var(--gold2);font-weight:900;
+  box-shadow:inset 0 0 0 4px rgba(215,173,88,.06)
+}
+.brand small{display:block;color:#9fb3c1;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+.links{display:flex;align-items:center;gap:24px;color:#dce7ee;font-size:14px;font-weight:650}
+.links a:hover{color:var(--gold2)}
+.menuBtn{
+  display:none;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;
+  width:44px;height:44px;border-radius:12px;cursor:pointer
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border-radius:13px;padding:13px 18px;border:1px solid transparent;
+  font-weight:800;cursor:pointer;transition:.2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:#17202a;box-shadow:0 9px 24px rgba(215,173,88,.18)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-outline{color:#fff;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.02)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold2)}
+.btn-navy{background:var(--navy);color:#fff}
+.hero{
+  color:#fff;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 83% 20%, rgba(215,173,88,.17), transparent 24%),
+    radial-gradient(circle at 70% 80%, rgba(21,150,109,.10), transparent 30%),
+    linear-gradient(125deg,#061421 0%,#0b2436 55%,#12394f 100%);
+}
+.hero:before{
+  content:"";position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;
+  border:1px solid rgba(240,208,138,.12);box-shadow:0 0 0 55px rgba(240,208,138,.025),0 0 0 110px rgba(240,208,138,.02)
+}
+.hero .wrap{
+  position:relative;display:grid;grid-template-columns:1.22fr .78fr;
+  gap:64px;align-items:center;padding:100px 0 92px
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  text-transform:uppercase;letter-spacing:1.7px;
+  color:var(--gold2);font-size:12px;font-weight:900
+}
+.kicker:before{content:"";width:28px;height:1px;background:var(--gold)}
+.hero h1{
+  font-size:clamp(44px,6vw,78px);line-height:.99;letter-spacing:-2.8px;
+  margin:18px 0 22px;max-width:760px
+}
+.hero p{max-width:720px;color:#cbd7df;font-size:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.glass{
+  border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+  border-radius:26px;padding:28px;box-shadow:0 30px 70px rgba(0,0,0,.20);
+}
+.glass .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:#9fb4c1;font-weight:800}
+.stat{display:flex;justify-content:space-between;gap:15px;align-items:flex-end;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.stat:last-child{border-bottom:0}
+.stat span{color:#c5d2da;font-size:14px;max-width:160px}
+.stat strong{color:var(--gold2);font-size:29px;letter-spacing:-.7px}
+.section{padding:88px 0}
+.soft{background:#f6f8fa}
+.cream{background:var(--cream)}
+.head{max-width:760px;margin-bottom:38px}
+.head h2{font-size:clamp(34px,4vw,54px);line-height:1.07;letter-spacing:-1.6px;margin:12px 0;color:var(--navy)}
+.head p{color:var(--muted);font-size:17px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  box-shadow:0 12px 35px rgba(7,24,39,.055);transition:.2s ease
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.icon{
+  width:50px;height:50px;border-radius:15px;display:grid;place-items:center;
+  background:#f7efdf;color:#8f6819;font-weight:900;font-size:18px
+}
+.card h3{color:var(--navy);font-size:21px;margin:18px 0 9px}
+.card p{color:var(--muted);margin:0}
+.impact{
+  background:linear-gradient(120deg,#071827,#0d2d42);
+  color:#fff;border-radius:26px;padding:34px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  box-shadow:var(--shadow)
+}
+.impact .box{padding:10px 18px;border-right:1px solid rgba(255,255,255,.1)}
+.impact .box:last-child{border-right:0}
+.impact strong{display:block;color:var(--gold2);font-size:32px;line-height:1.1}
+.impact span{display:block;color:#c5d2db;margin-top:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.quote{
+  border-left:4px solid var(--gold);padding:3px 0 3px 20px;
+  color:#314150;font-size:20px;margin:25px 0
+}
+.badge{
+  display:inline-block;border-radius:999px;padding:6px 10px;
+  background:#eaf6f1;color:#147456;font-size:12px;font-weight:850
+}
+.list{list-style:none;padding:0;margin:12px 0 0}
+.list li{padding:11px 0;border-bottom:1px solid var(--line);color:#42515d}
+.donateWrap{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.amount{
+  border:2px solid #dce2e7;background:#fff;border-radius:16px;padding:18px 10px;
+  font-size:21px;font-weight:900;cursor:pointer;color:var(--navy)
+}
+.amount.active{border-color:var(--gold);background:#fff8e9;color:#76550f}
+.pay{
+  background:linear-gradient(145deg,#071827,#0e3045);color:#fff;border-radius:24px;padding:30px;box-shadow:var(--shadow)
+}
+.pay .num{font-size:31px;color:var(--gold2);font-weight:950;letter-spacing:1px;margin:5px 0 18px}
+.pay p{color:#c8d5dd}
+.steps{display:grid;gap:14px;margin-top:24px}
+.step{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start}
+.step b:first-child{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:#f2dfb3;color:#6a4c0b
+}
+.contactBox{
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;
+  box-shadow:0 12px 30px rgba(7,24,39,.05)
+}
+.cta{
+  border-radius:28px;padding:48px;color:#fff;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(215,173,88,.18),transparent 25%),
+    linear-gradient(120deg,#071827,#12394f)
+}
+.cta h2{font-size:clamp(34px,4vw,54px);line-height:1.05;margin:0 0 14px}
+.cta p{color:#c8d5dd;max-width:760px}
+footer{background:#04111d;color:#aebfca;padding:50px 0 24px}
+.foot{display:grid;grid-template-columns:1.3fr .7fr .8fr;gap:34px}
+footer h4{color:#fff;margin-top:0}
+footer a{display:block;margin:8px 0}
+footer a:hover{color:var(--gold2)}
+.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:32px;padding-top:20px;font-size:13px}
+.anchor{scroll-margin-top:90px}
+.toast{min-height:22px;color:#cce8da;font-size:13px;margin-top:9px}
+@media(max-width:900px){
+  .links{
+    display:none;position:absolute;top:78px;left:0;right:0;background:#071827;
+    padding:20px 4%;flex-direction:column;align-items:flex-start;border-top:1px solid rgba(255,255,255,.08)
+  }
+  .links.open{display:flex}
+  .menuBtn{display:block}
+  .hero .wrap,.two,.donateWrap{grid-template-columns:1fr}
+  .grid3,.impact,.foot{grid-template-columns:1fr}
+  .impact .box{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .impact .box:last-child{border-bottom:0}
+  .hero .wrap{padding:72px 0}
+}
+@media(max-width:560px){
+  .topbar .inner{padding:8px 0}
+  .brand span:last-child{font-size:14px}
+  .amounts{grid-template-columns:1fr}
+  .section{padding:68px 0}
+  .cta{padding:34px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container inner">
+    <span>100% transparent grassroots welfare effort</span>
+    <span>WhatsApp: 03446787186 &nbsp; • &nbsp; Easypaisa: 03354290692</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="container navrow">
+    <a class="brand" href="#home">
+      <div class="logo">PI</div>
+      <span>Pasdaran-e-Insaniyat<small>Guardians of Humanity</small></span>
+    </a>
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#work">Our Work</a>
+      <a href="#transparency">Transparency</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#donate">Donate Now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero anchor" id="home">
+  <div class="container wrap">
+    <div>
+      <span class="kicker">Helping the Needy, One Step at a Time</span>
+      <h1>Strength in humanity. Service with purpose.</h1>
+      <p>Pasdaran-e-Insaniyat is a newly established grassroots welfare organization led by a small, passionate circle of friends and volunteers. We turn modest community contributions into practical relief for people who need it most.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#donate">Support with Rs. 100, 300 or 500</a>
+        <a class="btn btn-outline" href="https://wa.me/923446787186" target="_blank" rel="noopener">Contact on WhatsApp</a>
+      </div>
+    </div>
+    <aside class="glass">
+      <div class="eyebrow">Current community snapshot</div>
+      <div class="stat"><span>Active core members & volunteers</span><strong>7–12</strong></div>
+      <div class="stat"><span>Community fund collected</span><strong>PKR 4,500</strong></div>
+      <div class="stat"><span>Collection period</span><strong>2 months</strong></div>
+    </aside>
+  </div>
+</header>
+
+<section class="section anchor" id="work">
+  <div class="container">
+    <div class="head">
+      <span class="kicker">Our work</span>
+      <h2>Small projects that answer real, everyday needs.</h2>
+      <p>We focus on practical welfare activities that can create immediate comfort while staying within the resources our community can genuinely support.</p>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <div class="icon">01</div>
+        <h3>Thirst Relief</h3>
+        <p>Installing public water coolers and placing water bowls for birds and animals, especially during hot weather.</p>
+      </article>
+      <article class="card">
+        <div class="icon">02</div>
+        <h3>Heatwave Relief</h3>
+        <p>Distributing cold water and ORS to poor laborers working on the streets during extreme summer heat.</p>
+      </article>
+      <article class="card">
+        <div class="icon">03</div>
+        <h3>Awareness & Community</h3>
+        <p>Sharing positive messages such as Durood-e-Pak reminders and growing our community through printed stickers and future WhatsApp Channel QR codes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft anchor" id="transparency">
+  <div class="container">
+    <div class="impact">
+      <div class="box"><strong>100%</strong><span>Transparency-focused approach</span></div>
+      <div class="box"><strong>PKR 4,500</strong><span>Collected over the last 2 months</span></div>
+      <div class="box"><strong>Rs. 100</strong><span>Smallest featured contribution option</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section anchor" id="about">
+  <div class="container two">
+    <div>
+      <span class="kicker">About Pasdaran-e-Insaniyat</span>
+      <div class="head" style="margin-bottom:0">
+        <h2>Built by ordinary people who chose to care.</h2>
+      </div>
+      <p>We are a close-knit team of around 7 to 12 active members and volunteers. We are new, our resources are limited, and we do not pretend otherwise. Our strength is staying close to the people we serve and careful with every rupee trusted to us.</p>
+      <p class="quote">Impact is not only about how much you have — it is also about how faithfully you use what people trust you with.</p>
+    </div>
+    <div class="card">
+      <span class="badge">What guides us</span>
+      <h3>Humanity with accountability</h3>
+      <ul class="list">
+        <li><strong>Respect:</strong> Help should protect human dignity.</li>
+        <li><strong>Transparency:</strong> Supporters deserve clarity about funds.</li>
+        <li><strong>Action:</strong> We focus on manageable, immediate needs.</li>
+        <li><strong>Community:</strong> Everyone can contribute according to capacity.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section cream anchor" id="donate">
+  <div class="container">
+    <div class="head">
+      <span class="kicker">Donate with confidence</span>
+      <h2>Choose only what you can comfortably afford.</h2>
+      <p>Giving should never feel like pressure. Select Rs. 100, Rs. 300 or Rs. 500 and send it directly through Easypaisa.</p>
+    </div>
+
+    <div class="donateWrap">
+      <div class="card">
+        <span class="badge">Select contribution</span>
+        <h3 style="font-size:28px">Your amount: Rs. <span id="selectedAmount">100</span></h3>
+        <div class="amounts">
+          <button class="amount active" data-amount="100">Rs. 100</button>
+          <button class="amount" data-amount="300">Rs. 300</button>
+          <button class="amount" data-amount="500">Rs. 500</button>
+        </div>
+        <p>This website does not collect card, bank, or Easypaisa credentials. It simply shows the official donation number and lets you choose an amount before making the transfer yourself.</p>
+        <div style="height:1px;background:var(--line);margin:22px 0"></div>
+        <strong style="color:var(--navy)">Current public fund snapshot</strong>
+        <p style="margin-bottom:0">PKR 4,500 collected over the last 2 months.</p>
+      </div>
+
+      <aside class="pay">
+        <span class="kicker">Easypaisa donation</span>
+        <h3 style="font-size:25px;margin-bottom:0">Send your contribution to</h3>
+        <div class="num">03354290692</div>
+        <button class="btn btn-gold" id="copyBtn">Copy Easypaisa Number</button>
+        <div class="toast" id="toast"></div>
+
+        <div class="steps">
+          <div class="step"><b>1</b><div><strong>Open Easypaisa</strong><p style="margin:2px 0 0">Use your Easypaisa app or available transfer method.</p></div></div>
+          <div class="step"><b>2</b><div><strong>Enter 03354290692</strong><p style="margin:2px 0 0">Double-check the number before confirming.</p></div></div>
+          <div class="step"><b>3</b><div><strong>Send Rs. 100, 300 or 500</strong><p style="margin:2px 0 0">Choose the amount that suits your capacity.</p></div></div>
+          <div class="step"><b>4</b><div><strong>Contact us if needed</strong><p style="margin:2px 0 0">You may message us on WhatsApp with questions or confirmation.</p></div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section anchor" id="contact">
+  <div class="container two">
+    <div>
+      <span class="kicker">Contact / Join Us</span>
+      <div class="head" style="margin-bottom:0">
+        <h2>Be part of the next act of kindness.</h2>
+      </div>
+      <p>Join as a volunteer, ask about our projects, or speak with the team directly. A dedicated WhatsApp Channel QR/link section can be added when your channel link becomes available.</p>
+      <div class="actions">
+        <a class="btn btn-navy" href="https://wa.me/923446787186" target="_blank" rel="noopener">Open WhatsApp Chat</a>
+        <a class="btn" style="border-color:#dfe5e9" href="tel:+923446787186">03446787186</a>
+      </div>
+    </div>
+    <div class="contactBox">
+      <span class="badge">Ways to participate</span>
+      <ul class="list">
+        <li>Volunteer in distribution activities</li>
+        <li>Support water and heatwave relief</li>
+        <li>Contribute Rs. 100, Rs. 300 or Rs. 500</li>
+        <li>Help share awareness messages</li>
+        <li>Stay connected for future WhatsApp Channel updates</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container cta">
+    <h2>You do not need to be wealthy to help someone.</h2>
+    <p>When a community gives together, even a small contribution can become part of something meaningful. Pasdaran-e-Insaniyat exists to turn that willingness into practical service.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="#donate">Donate Now</a>
+      <a class="btn btn-outline" href="https://wa.me/923446787186" target="_blank" rel="noopener">Join on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <h4>Pasdaran-e-Insaniyat</h4>
+        <p>Helping the Needy, One Step at a Time. A grassroots welfare initiative built around service, dignity and transparent giving.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#about">About Us</a>
+        <a href="#work">Our Work</a>
+        <a href="#transparency">Transparency</a>
+        <a href="#donate">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/923446787186" target="_blank" rel="noopener">WhatsApp: 03446787186</a>
+        <span>Easypaisa: 03354290692</span>
+      </div>
+    </div>
+    <div class="copy">© 2026 Pasdaran-e-Insaniyat. Guardians of Humanity.</div>
+  </div>
+</footer>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+const amountButtons=document.querySelectorAll('.amount');
+const selected=document.getElementById('selectedAmount');
+amountButtons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    amountButtons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    selected.textContent=btn.dataset.amount;
+  });
+});
+
+document.getElementById('copyBtn').addEventListener('click', async ()=>{
+  const toast=document.getElementById('toast');
+  try{
+    await navigator.clipboard.writeText('03354290692');
+    toast.textContent='Easypaisa number copied successfully.';
+  }catch(e){
+    toast.textContent='Please copy manually: 03354290692';
+  }
+});
+</script>
+</body>
+</html>
