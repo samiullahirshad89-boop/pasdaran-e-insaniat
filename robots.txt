@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://samiullahirshad89-boop.github.io/pasdaran-e-insaniat/sitemap.xml
